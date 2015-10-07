@@ -19,18 +19,23 @@ MissionMeta.prototype.pushTask = function (startTime, endTime, options) {
         job.data = options.data;
     }
     this.jobs.push(job);
-    if (this.minStartTime == undefined || startTime < minStartTime) {
+    if (this.minStartTime == undefined || startTime < this.minStartTime) {
         this.minStartTime = startTime
     }
-    if (this.maxEndtime == undefined || endTime > maxEndtime) {
-        this.minStartTime = startTime
+    if (this.maxEndtime == undefined || endTime > this.maxEndtime) {
+        this.maxEndtime =endTime 
     }
     return job;
 };
 
 MissionMeta.prototype.getResult = function () {
     this.totalJobs = this.jobs.length;
-    this.totalDuration = (this.maxEndtime - this.minStartTime);
-    this.averageLatencyInMs = this.totalTimes / this.totalJobs;
+    this.totalDuration = (this.maxEndtime.getTime() - this.minStartTime.getTime());
+    this.averageLatencyInMs = this.totalDuration / this.totalJobs;
+    return {
+        totalJobs:this.totalJobs,
+        totalDuration: this.totalDuration,
+        averageLatencyInMs: this.averageLatencyInMs
+    };
 }
 module.exports = MissionMeta;
