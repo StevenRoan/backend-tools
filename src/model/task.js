@@ -18,9 +18,7 @@ util.inherits(Task, EventEmitter);
 Task.prototype.exec = function () {
     var self = this;
     var startTime = new Date();
-    console.log('1')
     this.taskFunc(function (err, results) {
-    console.log('2')
         var endTime = new Date();
         self.missionMeta.pushTask(startTime, endTime, {
             data: results

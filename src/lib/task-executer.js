@@ -1,13 +1,14 @@
 var MissionMeta = require('../model/mission-meta');
 var curExecuting = false;
 var Task = require('../model/task');
+var timers = {};
 
-function execCb(task, statusObj) {
+function execCb(task, statusObj, timerKey) {
     statusObj.counter++;
     if (statusObj.counter >= statusObj.taskNumber) {
+        clearInterval(timers[timerKey])
         return task.emit("endTask");
     }
-    console.log(statusObj.counter);
     task.exec();
 };
 
@@ -23,7 +24,8 @@ function execUniformly(taskFunc, options) {
         taskNumber: taskNumber,
         counter: 0
     };
-    setInterval(execCb, interval, task, statusObj);
+    var timerKey = new Date().getTime();
+    timers[timerKey] = setInterval(execCb, interval, task, statusObj, timerKey);
 };
 
 exports.execUniformly = execUniformly;
