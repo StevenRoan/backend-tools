@@ -1,0 +1,25 @@
+{
+  "name": "cloud-logging-comparison",
+  "version": "1.0.0",
+  "description": "Comparing and do some simple test in modern centralized cloud logging solution ( logstash, fluentd and.. etc)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StevenRoan/cloud-logging-comparison.git"
+  },
+  "author": "TZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenRoan/cloud-logging-comparison/issues"
+  },
+  "homepage": "https://github.com/StevenRoan/cloud-logging-comparison",
+  "dependencies": {
+    "bunyan": "^1.5.1"
+  }
+}
