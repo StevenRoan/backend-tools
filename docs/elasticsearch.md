@@ -1,7 +1,10 @@
 # Elastic Search
 
-### Getting Started 
+### Getting Started
 * `bash ./bin/elasticsearch` for basic service start-up, it will occupy *9200, 9300* ports.
+
+### Access
+* 127.0.0.1:8000
 
 ### Fundamental API
 * find all

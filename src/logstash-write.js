@@ -9,6 +9,7 @@ var logger = bunyan.createLogger({
 })
 var taskFunc = function (callback) {
     logger.info("test");
+    logger.error("test2");
     setTimeout(callback, 0);
 };
 execUniformly(taskFunc)
