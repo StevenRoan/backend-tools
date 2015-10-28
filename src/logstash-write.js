@@ -12,4 +12,6 @@ var taskFunc = function (callback) {
     logger.error("test2");
     setTimeout(callback, 0);
 };
-execUniformly(taskFunc)
+execUniformly(taskFunc, {
+    taskNumber: 100000
+});
