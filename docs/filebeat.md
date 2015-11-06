@@ -8,3 +8,5 @@ The lumberjack protocol is implemented.
 
 ### NOTE
 * Use /etc/filebeat/filebeat.yml as example
+* 1.0.0 rc-1:
+ * No missing file even though the interval equal to 20ms

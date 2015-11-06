@@ -14,11 +14,11 @@ var logger2 = bunyan.createLogger({
     }]
 })
 var taskFunc = function (callback) {
-    logger.info("test");
-    logger.error("test2 [first] [{'123', '34'}]");
+    logger.error("test01: [first] [%s]",Date());
     logger2.error('test logger2');
+    console.log(Date())
 };
 execUniformly(taskFunc, {
     taskNumber: 100000,
-    interval: 1000
+    interval: 80
 });
