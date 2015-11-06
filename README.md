@@ -1,2 +1,2 @@
-# cloud-logging-comparison
-Comparing and do some simple test in modern centralized cloud logging solution ( logstash, fluentd and.. etc)
+# Backend Tool
+* This repository add some example as the getting started chapter in tutorial to test the configuration.
