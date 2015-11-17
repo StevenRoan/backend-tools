@@ -25,5 +25,14 @@ output {
 }
 ```
 
+### resources
+* [filter pattern](https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/mongodb)
+
 ### Problem
 * **unknown setting** protocol for elasticsearch
+
+### Document Keynote
+* [Basic Data Type](https://www.elastic.co/guide/en/logstash/1.5/configuration-file-structure.html)
+* [Event Dependent configuration](https://www.elastic.co/guide/en/logstash/2.0/event-dependent-configuration.html)
+ * `if else`. [Using Conditional](https://www.elastic.co/guide/en/logstash/2.0/config-examples.html#using-conditionals)
+ * access variable in config (Field Reference and Sprintf Format)
