@@ -6,6 +6,10 @@
 ### Access
 * 127.0.0.1:8000
 
+
+### Network Configuration
+* In elasticsearch 2.1, es only received request from localhost by default.
+
 ### Fundamental API
 * find all
  * `http://localhost:9200/<index name>`/_search?pretty=true&q=*`
