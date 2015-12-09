@@ -13,3 +13,8 @@
  * `http://localhost:9200/_cat/indices?v`
 * get settings
  * `localhost:9200/_nodes/settings?pretty=true`
+* get cluster status
+ * `/_cluster/health?pretty`
+ * `/_cluster/health?level=indices&pretty`
+ * `/_cat/shards`
+  * `red` is broken status
