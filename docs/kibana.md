@@ -10,3 +10,7 @@
 ### query
 * equal(`...==...`), inequal(`!...==...`)
 * greater (`...:>...`)
+
+### Data Visualization
+* metrics: similar to the **value** of y-axis
+* bucket: similar to the **set** of data of x-axis
