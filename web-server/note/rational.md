@@ -1,0 +1,1 @@
+* [Choosing Http Code- Stop make it hard](http://racksburg.com/choosing-an-http-status-code/)
