@@ -26,6 +26,18 @@
 
       > * Each socket  is created by certain **namespace**
       > * Each socket can create different **room** in a **namespace**
+      
+##### Graph
+```
+     Server
+   /       \
+ Client     \
+      \      \
+        Namespace
+          /    \
+        *room* Socket
+
+```
 
 
 ##### namespace and room
