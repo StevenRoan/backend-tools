@@ -14,17 +14,30 @@ var logger2 = bunyan.createLogger({
         path: "/var/log/logstash/logstash2.log"
     }]
 })
-var taskFunc = function (callback) {
-    // logger.error("test01: [first] [%s]",Date());
-    // logger2.error('test logger2');
+// var taskFunc = function (callback) {
+//     // logger.error("test01: [first] [%s]",Date());
+//     // logger2.error('test logger2');
+//     var a = {
+//         name2: "testjsonlog",
+//         property: "json of json"
+//     };
+//     logger.error(a);
+//     console.log(Date())
+    // return callback();
+// };
+var counter = 0;
+var montonoticIncreaseLog = function(callback) {
     var a = {
-        name2: "testjsonlog",
-        property: "json of json"
-    };
+        mycount: counter,
+        time: new Date(new Date().getTime() - 1800000 + counter*1000)
+    }
     logger.error(a);
-    console.log(Date())
+    console.log(a)
+    counter += 100;
+    return callback();
 };
-execUniformly(taskFunc, {
-    taskNumber: 100000,
-    interval: 80
+
+execUniformly(montonoticIncreaseLog, {
+    taskNumber: 10,
+    interval: 1000
 });

@@ -23,7 +23,7 @@ MissionMeta.prototype.pushTask = function (startTime, endTime, options) {
         this.minStartTime = startTime
     }
     if (this.maxEndtime == undefined || endTime > this.maxEndtime) {
-        this.maxEndtime =endTime 
+        this.maxEndtime = endTime;
     }
     return job;
 };
