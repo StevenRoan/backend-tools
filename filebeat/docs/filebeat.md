@@ -10,3 +10,6 @@ The lumberjack protocol is implemented.
 * Use /etc/filebeat/filebeat.yml as example
 * 1.0.0 rc-1:
  * No missing file even though the interval equal to 20ms
+### Problem:
+* sometimes filebeat log is not working
+ * Remember to turn `to_syslog: false` `to_files:true`.

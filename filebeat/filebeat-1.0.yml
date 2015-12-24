@@ -12,7 +12,7 @@ filebeat:
       # For each file found under this path, a harvester is started.
       # Make sure not file is defined twice as this can lead to unexpected behaviour.
       paths:
-        - /var/log/*.log
+        - /var/log/logstash/*.log
       # - c:\programdata\elasticsearch\logs\*
 
       # Configure the file encoding for reading files with international characters
@@ -147,12 +147,12 @@ filebeat:
 output:
 
   ### Elasticsearch as output
-  elasticsearch:
-    # Array of hosts to connect to.
-    # Scheme and port can be left out and will be set to the default (http and 9200)
-    # In case you specify and additional path, the scheme is required: http://localhost:9200/path
-    # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
-    hosts: ["localhost:9200"]
+  # elasticsearch:
+  #   # Array of hosts to connect to.
+  #   # Scheme and port can be left out and will be set to the default (http and 9200)
+  #   # In case you specify and additional path, the scheme is required: http://localhost:9200/path
+  #   # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
+  #   hosts: ["localhost:9200"]
 
     # Optional protocol and basic auth credentials. These are deprecated.
     #protocol: "https"
@@ -225,9 +225,9 @@ output:
 
 
   ### Logstash as output
-  #logstash:
+  logstash:
     # The Logstash hosts
-    #hosts: ["localhost:5044"]
+    hosts: ["localhost:5044"]
 
     # Number of workers per Logstash host.
     #worker: 1
@@ -332,26 +332,26 @@ logging:
 
   # Send all logging output to syslog. On Windows default is false, otherwise
   # default is true.
-  #to_syslog: true
+  to_syslog: false
 
   # Write all logging output to files. Beats automatically rotate files if rotateeverybytes
   # limit is reached.
-  #to_files: false
+  to_files: true
 
   # To enable logging to files, to_files option has to be set to true
   files:
     # The directory where the log files will written to.
-    #path: /var/log/mybeat
+    path: /var/log/filebeat
 
     # The name of the files where the logs are written to.
-    #name: mybeat
+    name: mybeat
 
     # Configure log file size limit. If limit is reached, log file will be
     # automatically rotated
     rotateeverybytes: 10485760 # = 10MB
 
     # Number of rotated log files to keep. Oldest files will be deleted first.
-    #keepfiles: 7
+    keepfiles: 7
 
   # Enable debug output for selected components. To enable all selectors use ["*"]
   # Other available selectors are beat, publish, service
@@ -360,6 +360,6 @@ logging:
 
   # Sets log level. The default log level is error.
   # Available log levels are: critical, error, warning, info, debug
-  #level: error
+  level: debug
 
 

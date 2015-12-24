@@ -18,6 +18,11 @@
 * json
  * transform json inpu to logstash fields
 
+ ### Basic Syntax
+ * %{[onevariable]}
+  * [..]: get the value of a variable. Can be preserved word, or data in the previous stage
+  * %{}:interleaving
+
 ### Fundamental Out
 ```
 output {
@@ -36,3 +41,17 @@ output {
 * [Event Dependent configuration](https://www.elastic.co/guide/en/logstash/2.0/event-dependent-configuration.html)
  * `if else`. [Using Conditional](https://www.elastic.co/guide/en/logstash/2.0/config-examples.html#using-conditionals)
  * access variable in config (Field Reference and Sprintf Format)
+
+### Config Detail
+* Time format as variable. ** The "+" before Y is important**.
+```
+output {
+   elasticsearch {
+       protocol => "http"
+       host => ["127.0.0.1:9200"]
+       index => "loga-%{+YYYY.MM.dd}"
+   }
+   stdout {codec => rubydebug}
+}
+
+```
