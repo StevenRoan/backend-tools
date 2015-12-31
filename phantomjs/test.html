@@ -1,0 +1,918 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta name="KEYWORDS" content="airline, booking flight, online flight booking" /><meta name="DESCRIPTION" content="Fly Peach" /><link href="App_Themes/Default/Images/favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="App_Themes/Default/Style/Calendar.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/fg-tooltip.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/htmlie7.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/jquery-ui-1.7.1.custom.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/main.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/popup.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/style.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/ui.daterangepicker.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/availability.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/jquery-ui.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/passengersummary.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/passengerdetail.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/seatselection.css" rel="stylesheet" type="text/css" /><link href="App_Themes/Default/Style/insurance.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="Scripts/jQuery/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery/jquery.maskedinput-1.2.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery/jquery.base64.min.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery/jquery.collapse.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery/jquery-ui.js"></script>
+
+    <script src="Scripts/Availability.js" type="text/javascript"></script>
+    <script src="Scripts/B2BLogon.js" type="text/javascript"></script>
+    <script src="Scripts/B2ELogon.js" type="text/javascript"></script>
+    <script src="Scripts/Baggage.js" type="text/javascript"></script>
+    <script src="Scripts/ChangeOfBooking.js" type="text/javascript"></script>
+    <script src="Scripts/ClientLogon.js" type="text/javascript"></script>
+    <script src="Scripts/ClientMileage.js" type="text/javascript"></script>
+    <script src="Scripts/ClientPopupList.js" type="text/javascript"></script>
+    <script src="Scripts/FlightSelectionBox.js" type="text/javascript"></script>
+    <script src="Scripts/FlightSummary.js" type="text/javascript"></script>
+    <script src="Scripts/GlobalSetup.js" type="text/javascript"></script>
+    <script src="Scripts/home.js" type="text/javascript"></script>
+    <script src="Scripts/Insurance.js" type="text/javascript"></script>
+    <script src="Scripts/LowFareFinder.js" type="text/javascript"></script>
+    <script src="Scripts/Main.js" type="text/javascript"></script>
+    <script src="Scripts/MyBooking.js" type="text/javascript"></script>
+    <script src="Scripts/NewsRegisterDetail.js" type="text/javascript"></script>
+    <script src="Scripts/PassengerDetail.js" type="text/javascript"></script>
+    <script src="Scripts/payment.js" type="text/javascript"></script>
+    <script src="Scripts/QuoteSummary.js" type="text/javascript"></script>
+    <script src="Scripts/Registration.js" type="text/javascript"></script>
+    <script src="Scripts/SeatMap.js" type="text/javascript"></script>
+    <script src="Scripts/SpecialService.js" type="text/javascript"></script>
+    <script src="Scripts/uxCalendar.js" type="text/javascript"></script>
+    <script src="Scripts/MultipleTab.js" type="text/javascript"></script>
+
+    <script language="javascript" src="Scripts/TabDetection.js" type="text/javascript"></script>
+
+   
+    
+    <title>
+	Peach | Peach
+</title>
+    <script type="text/javascript">
+        if (UseGoogleManager() == true) {
+            var GoogleTagManagerID = "";
+        }
+        else {
+            var GoogleAnalyticID = "UA-22551037-1";
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', GoogleAnalyticID]);
+            _gaq.push(['_setDomainName', '.flypeach.com']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview', '/booking/search-flight.html']);
+
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        }
+
+    </script>
+</head>
+<body onbeforeunload="MultipleTab.ClearID();">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GoogleTagManagerID" height="0"
+            width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <script type="text/javascript">
+
+        if (UseGoogleManager() == true) {
+
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({ 'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', GoogleTagManagerID);
+        }
+
+    </script>
+    <!-- End Google Tag Manager -->
+    <form name="frmMain" method="post" action="default.aspx?ao=B2CZHTW&amp;ori=TPE&amp;des=OKA&amp;dep=2016-02-28&amp;ret=2016-03-02&amp;adt=1&amp;chd=0&amp;inf=0&amp;langculture=zh-TW&amp;bLFF=false" id="frmMain">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODgzOTI1MzAxZGRtsZgziccFz2j0pAbdyX+irSEkPw==" />
+
+<script type="text/javascript">SetLanguage('{"default_value_6" : "YYYY","Alert_Message_49" : "同意購入條件","Alert_Message_38" : "請輸入信用卡持卡人","Alert_Message_135" : "支付期限已逾期","Alert_Message_134" : "您所選擇的座位無法供嬰幼兒使用","Alert_Message_137" : "嬰幼兒和兒童無法乘坐緊急出口旁的座位","Alert_Message_136" : "關於付款期限，請參照網站上常見問答頁面","Alert_Message_131" : "回程航班須晚於去程航班的抵達時間","Alert_Message_130" : "Please accept insurance term and condition.","Alert_Message_133" : "您所選擇的座位無法供兒童使用","Alert_Message_132" : "請確認緊急出口旁座位的使用條件","Alert_Message_139" : "請確認所選擇的日期","Alert_Message_138" : "重新搜尋","Alert_Message_25" : "請更正團體名稱","Alert_Message_87" : "您所輸入的電子郵件已被使用","Alert_Message_76" : "請選擇Peach點數編號","default_value_9" : "件","Alert_Message_47" : "很抱歉，信用卡付款手續出現錯誤。請再度確認您的信用卡資料，或是選擇其他付款方式進行結算。 ","Alert_Message_88" : "您的Peach帳號已建立。帳號編碼：","Alert_Message_36" : "Peach點數編號或驗證碼有誤","Alert_Message_6" : "請選擇乘客","default_value_7" : "請選擇","Alert_Message_48" : "很抱歉，信用卡付款手續出現錯誤。請向您的信用卡公司確認狀況，或是選擇其他付款方式進行結算。 ","Alert_Message_64" : "乘客 {NO}的名單重複","Alert_Message_2" : "無法受理嬰幼兒人數多於成人的訂單","Alert_Message_99" : "請更正密碼(確認用)","Alert_Message_24" : "請更正電子郵件地址","Alert_Message_86" : "儲存失敗","Alert_Message_75" : "查無可利用之Peach點數","Alert_Message_46" : "信用卡有效期限有誤","Alert_Message_35" : "請更正驗證碼","Alert_Message_70" : "請確認公司電話號碼是否正確","Alert_Message_4" : "抱歉，MMxxx班機沒有空位，請選擇其他航班","Alert_Message_98" : "請更正密碼","Alert_Message_58" : "請確認您的回程日期與時間。回程出發時間須晚於去程抵達時間。","Alert_Message_85" : "請更正銀行帳戶號碼","Alert_Message_74" : "信用卡種類有誤","Alert_Message_45" : "信用卡安全驗證碼(CVV)有誤","Alert_Message_34" : "請更正Peach點數編號","Alert_Message_126" : "請選擇乘客 {NO}的出入境資料種類","Alert_Message_84" : "請更正銀行名稱","Alert_Message_44" : "信用卡號碼有誤","Alert_Message_95" : "請更正地址：巷弄號樓","Alert_Message_55" : "系統參數錯誤","Alert_Message_71" : "所有的必填項目都必須輸入資料","Alert_Message_8" : "您所查詢的訂單並非經由網路完成訂購，因此無法在網路上更改行程。請聯絡客服中心。","Alert_Message_73" : "請輸入信用卡號碼","Alert_Message_94" : "請更正電子郵件地址的格式","Alert_Message_33" : "請更正電子郵件地址","Alert_Message_54" : "尚未選擇出發地或目的地","Alert_Message_14" : "請以 YYYY/MM/DD 形式輸入乘客 {NO}的出生年月日","Alert_Message_9" : "本訂單正由客服人員處理中","Alert_Message_83" : "請更正銀行代碼","Alert_Message_93" : "請更正電子郵件地址","Alert_Message_43" : "請更正郵遞區號","Alert_Message_32" : "請更正電話號碼1<br> ※請勿輸入「00」或「+」開頭的號碼","Alert_Message_125" : "請選擇乘客 {NO}的稱謂","Alert_Message_124" : "請選擇行程聯絡人使用語言","Alert_Message_127" : "請選擇乘客 {NO}的國籍","Alert_Message_120" : "姓(英文)為必填項目","Alert_Message_123" : "請選擇行程聯絡人的國家","Alert_Message_122" : "請選擇行程聯絡人的稱謂","Alert_Message_129" : "-","Alert_Message_128" : "您的保險單號碼","Alert_Message_82" : "請更正姓名","Alert_Message_42" : "請更正地址：鄉鎮市區","Alert_Message_106" : "請更正出生年月日","Alert_Message_53" : "請確認乘客人數","Alert_Message_115" : "請更正乘客 {NO}的出生年月日","Alert_Message_114" : "乘客{NO}的護照效期已經過期","Alert_Message_117" : "請務必輸入乘客 {NO}的名字(英文)","Alert_Message_116" : "成人須大於12歲 (乘客 {NO})","Alert_Message_111" : "乘客{NO}的護照效期已經過期","Alert_Message_110" : "乘客{NO}的護照發行日期須早於訂購當日","Alert_Message_113" : "請更正乘客{NO}的護照發行日期","Alert_Message_112" : "乘客 {NO}的出生年月日須早於訂購當日","Alert_Message_119" : "名(英文)為必填項目","Alert_Message_118" : "請務必輸入乘客 {NO}的姓氏(英文)","Alert_Message_13" : "請輸入乘客 {NO}的英文姓氏","Alert_Message_41" : "請更正地址：巷弄號樓","Alert_Message_92" : "請更正電話號碼","default_value_11" : "OK","Alert_Message_65" : "請確認名字(英文)","Alert_Message_52" : "登入失敗","Alert_Message_105" : "請更正護照效期","Alert_Message_104" : "請更正發行日期","Alert_Message_107" : "發行日期須早於訂購當日","Alert_Message_101" : "請更正護照內容","Alert_Message_100" : "同意購入條件","Alert_Message_103" : "請更正出生地","Alert_Message_102" : "請更正發行地","Alert_Message_109" : "出生年月日須早於訂購當日","Alert_Message_108" : "護照效期已經過期","Alert_Message_12" : "您的旅客編號已被停權","default_value_4" : "（姓） （名）","Alert_Message_63" : "請輸入乘客 {NO}的出生年月日","Alert_Message_23" : "乘客 {NO}的年齡大於嬰幼兒(0-23個月)","Alert_Message_91" : "請更正姓氏(英文)","Alert_Message_51" : "很抱歉，兒童無法乘坐您所選擇的座位","Alert_Message_11" : "請重新整理網頁，或聯絡客服中心。","default_value_8" : "件","Alert_Message_62" : "乘客 {NO}的出生年月日須早於訂購當日","Alert_Message_22" : "乘客 {NO}的年齡大於兒童(2-11歲)","Alert_Message_90" : "請更正名字(英文)","default_value_1" : "(西元)年/月/日","Alert_Message_50" : "您所選擇的座位無法供攜帶嬰幼兒同行的乘客使用","Alert_Message_165" : "Cannot get Yahoo! Wallet Page. Please try again.","Alert_Message_166" : "Your booking session has expired. Please start the booking process again.","Alert_Message_161" : "很抱歉，由於付款手續途中發生系統逾時，煩請重新訂購。","Alert_Message_160" : "付款手續系統錯誤(Payment Error)","Alert_Message_163" : "Connection error with selected payment method, please contact call center","Alert_Message_162" : "很抱歉，您所選擇的航班艙位(Class)已經售完。系統已自動更新您的票價費用，請在完成購入手續前再次確認合計金額。","default_value_5" : "MM","Alert_Message_10" : "無法更改訂單內容","Alert_Message_59" : "嬰幼兒人數超過限制","Alert_Message_61" : "乘客 {NO}的護照效期已經過期","Alert_Message_19" : "請確認乘客{NO}的護照發行日期。護照發行日期必須早於訂購當日。","Alert_Message_21" : "請依 YYYY/MM/DD形式輸入","Alert_Message_97" : "請更正郵遞區號","Alert_Message_72" : "請確認信用卡種類是否正確","Alert_Message_57" : "請選擇去程航班","Alert_Message_140" : "請點選“OK”按鈕進入便利商店或網路轉帳付款系統。(僅限日本國內) 購入後24小時內未完成付款的訂單將被系統自動取消，請您務必於期限內完成付款。","Alert_Message_155" : "Please indicate your acceptance of our insurance condition by clicking the box.","Alert_Message_154" : "Please select if you need insurance or not.<br/>For your peace in mind, we recommend you add travel insurance to your itinerary","Alert_Message_157" : "請確認您已經閱讀並接受Peach的轉運航班相關規定。","Alert_Message_156" : "您所選擇的座位因同排幼兒人數已超過上限，無法讓您完成座位指定。請選擇其他排座位，謝謝。","Alert_Message_150" : "乘客的年齡大於兒童(2-11歲)","Alert_Message_153" : "您所選擇的付款方式無法使用。請選擇其他付款方式。","Alert_Message_152" : "Please confirm select flight <br/>Please click continue","Alert_Message_159" : "很抱歉，您所選擇的座位已被其他乘客指定。請重新選擇別的座位。","Alert_Message_158" : "訂購轉運航班時，請在閱讀相關規定後勾選注意事項欄位的方框以進行訂購手續。","Alert_Message_7" : "很抱歉，您的帳戶已被停權。請聯絡客服中心。","Alert_Message_17" : "請以 YYYY/MM/DD的形式輸入乘客 {NO}的護照效期","Alert_Message_60" : "您所選擇的票價在{NO}航班已沒有空位","Alert_Message_3" : "所選日期查無航班，或已無空位","Alert_Message_18" : "請以 YYYY/MM/DD的形式輸入乘客 {NO}的護照發行日期","Alert_Message_20" : "請確認乘客{NO}的護照效期。護照效期必須晚於回程航班抵達日。","Alert_Message_69" : "電話號碼1為必填項目","default_value_12" : "下一步","Alert_Message_96" : "請更正地址：鄉鎮市區","Alert_Message_29" : "請更正密碼","Alert_Message_56" : "系統錯誤或系統逾時(Time Out)。請重新搜尋。","Alert_Message_31" : "請更正電話號碼2","Alert_Message_145" : "指定座位和託運行李的追加已經完成了嗎？<br/>提醒您：網路購票時一起追加可以享受特惠價格。<br/>若要追加座位或行李請點選“返回”；","Alert_Message_144" : "請更正地址：縣市","Alert_Message_147" : "請選擇乘客 {NO}的護照發行國家","Alert_Message_146" : "若已確認購買內容請點選“下一步”前往付款。","Alert_Message_141" : "非來回票無法購買旅行保險","Alert_Message_143" : "無效的Peach帳號","Alert_Message_142" : "Contact person and the first passenger have to be the same to purchase insurance...","Alert_Message_149" : "成人須大於12歲","Alert_Message_148" : "顧客區分為必填項目","Alert_Message_16" : "請確認乘客 {NO}的護照發行地","default_value_3" : "任意","Alert_Message_27" : "請更正乘客{NO}的英文姓氏","Alert_Message_68" : "姓氏(英文)為必填項目","Alert_Message_81" : "驗證密碼有誤","default_value_13" : "返回","Alert_Message_28" : "請更正使用者名稱","Alert_Message_30" : "請更正行程聯絡人資料","Alert_Message_79" : "使用者ID(確認用)有誤","Alert_Message_67" : "請確認姓氏(英文)","Alert_Message_15" : "請確認乘客 {NO}的護照號碼","Alert_Message_39" : "請更正信用卡號碼","Alert_Message_66" : "名字(英文)為必填項目","Alert_Message_151" : "乘客的年齡大於嬰幼兒(0-23個月)","Alert_Message_26" : "請更正乘客{NO}的英文名","Alert_Message_80" : "請更正驗證密碼","default_value_10" : "免費","Alert_Message_5" : "請確認回程航班的日期。回程航班的日期不能早於去程航班。","Alert_Message_77" : "請更正使用者ID","default_value_2" : "必須","Alert_Message_40" : "請更正信用卡安全驗證碼(CVV)","Alert_Message_1" : "Error: 登入時發生錯誤","Alert_Message_89" : "儲存成功","Alert_Message_37" : "Peach點數餘額不足","Alert_Message_78" : "請更正使用者ID(確認用)","Alert_Message_121" : "請更正地址：縣市","Date_Sun" : "星期日","Date_Mon" : "星期一","Date_Tue" : "星期二","Date_Wed" : "星期三","Date_Thu" : "星期四","Date_Fri" : "星期五","Date_Sat" : "星期六","Date_Jan" : "一月","Date_Fed" : "二月","Date_Mar" : "三月","Date_Apr" : "四月","Date_May" : "五月","Date_Jun" : "六月","Date_Jul" : "七月","Date_Aug" : "八月","Date_Sep" : "九月","Date_Oct" : "十月","Date_Nov" : "十一月","Date_Dec" : "十二月","Date_Sun_Full" : "星期日","Date_Mon_Full" : "星期一","Date_Tue_Full" : "星期二","Date_Wed_Full" : "星期三","Date_Thu_Full" : "星期四","Date_Fri_Full" : "星期五","Date_Sat_Full" : "星期六","Date_Sun_short" : "日","Date_Mon_short" : "一","Date_Tue_short" : "二","Date_Wed_short" : "三","Date_Thu_short" : "四","Date_Fri_short" : "五","Date_Sat_short" : "六","Date_Jan_Full" : "一月","Date_Fed_Full" : "二月","Date_Mar_Full" : "三月","Date_Apr_Full" : "四月","Date_May_Full" : "五月","Date_Jun_Full" : "六月","Date_Jul_Full" : "七月","Date_Aug_Full" : "八月","Date_Sep_Full" : "九月","Date_Oct_Full" : "十月","Date_Nov_Full" : "十一月","Date_Dec_Full" : "十二月","LangCode" : "TW","NoFlight" : "No Flight","OperateFlight" : "Operate Flight"}');</script>
+<script type="text/javascript">
+//<![CDATA[
+var arrDestination = new Array("PUS|Busan|KIX|0|JPY","FUK|Fukuoka|KIX|0|JPY","FUK|Fukuoka|NRT|0|JPY","FUK|Fukuoka|OKA|0|JPY","HKG|Hong Kong|OKA|0|JPY","HKG|Hong Kong|KIX|0|JPY","KOJ|Kagoshima|KIX|0|JPY","KHH|Kaohsiung|KIX|0|JPY","MYJ|Matsuyama|KIX|0|JPY","KMI|Miyazaki|KIX|0|JPY","NGS|Nagasaki|KIX|0|JPY","ISG|New Ishigaki|KIX|0|JPY","OKA|Okinawa|TPE|0|TWD","OKA|Okinawa|KIX|0|JPY","OKA|Okinawa|NRT|0|JPY","OKA|Okinawa|FUK|0|JPY","OKA|Okinawa|ICN|0|KRW","OKA|Okinawa|HKG|0|HKD","KIX|Osaka - Kansai|KMI|0|JPY","KIX|Osaka - Kansai|NRT|0|JPY","KIX|Osaka - Kansai|OKA|0|JPY","KIX|Osaka - Kansai|HKG|0|HKD","KIX|Osaka - Kansai|TPE|0|TWD","KIX|Osaka - Kansai|KOJ|0|JPY","KIX|Osaka - Kansai|SDJ|0|JPY","KIX|Osaka - Kansai|KHH|0|TWD","KIX|Osaka - Kansai|MYJ|0|JPY","KIX|Osaka - Kansai|CTS|0|JPY","KIX|Osaka - Kansai|NGS|0|JPY","KIX|Osaka - Kansai|ISG|0|JPY","KIX|Osaka - Kansai|PUS|0|KRW","KIX|Osaka - Kansai|FUK|0|JPY","KIX|Osaka - Kansai|ICN|0|KRW","CTS|Sapporo - Chitose|KIX|0|JPY","CTS|Sapporo - Chitose|NRT|0|JPY","SDJ|Sendai|KIX|0|JPY","ICN|Seoul - Incheon|OKA|0|JPY","ICN|Seoul - Incheon|KIX|0|JPY","ICN|Seoul - Incheon|HND|0|JPY","TPE|Taipei - Taoyuan|HND|0|JPY","TPE|Taipei - Taoyuan|OKA|0|JPY","TPE|Taipei - Taoyuan|KIX|0|JPY","NRT|Tokyo - Narita|CTS|0|JPY","NRT|Tokyo - Narita|KIX|0|JPY","NRT|Tokyo - Narita|FUK|0|JPY","NRT|Tokyo - Narita|OKA|0|JPY","HND|Tokyo Haneda|TPE|0|TWD","HND|Tokyo Haneda|ICN|0|KRW");//]]>
+</script>
+<script language="javascript" type="text/javascript">var cards = new Array();
+cards [0] = {name: "VISADRUK",length: "16, 19",prefixes: "400626-400626",checkdigit: true};cards [1] = {name: "VISADRUK",length: "16, 19",prefixes: "418760-418760",checkdigit: true};cards [2] = {name: "VISADRUK",length: "16, 19",prefixes: "419772-419772",checkdigit: true};cards [3] = {name: "VISADRUK",length: "16, 19",prefixes: "420672-420672",checkdigit: true};cards [4] = {name: "VISADRUK",length: "16, 19",prefixes: "422793-422793",checkdigit: true};cards [5] = {name: "VISADRUK",length: "16, 19",prefixes: "423769-423769",checkdigit: true};cards [6] = {name: "VISADRUK",length: "16, 19",prefixes: "431072-431072",checkdigit: true};cards [7] = {name: "VISADRUK",length: "16, 19",prefixes: "444001-444001",checkdigit: true};cards [8] = {name: "VISADRUK",length: "16, 19",prefixes: "450875-450875",checkdigit: true};cards [9] = {name: "VISADRUK",length: "16, 19",prefixes: "454313-454313",checkdigit: true};cards [10] = {name: "VISADRUK",length: "16, 19",prefixes: "454742-454742",checkdigit: true};cards [11] = {name: "VISADRUK",length: "16, 19",prefixes: "498824-498824",checkdigit: true};cards [12] = {name: "VISADRUK",length: "16, 19",prefixes: "499902-499902",checkdigit: true};cards [13] = {name: "VISADRUK",length: "16, 19",prefixes: "409400-409402",checkdigit: true};cards [14] = {name: "VISADRUK",length: "16, 19",prefixes: "412285-412288",checkdigit: true};cards [15] = {name: "VISADRUK",length: "16, 19",prefixes: "413733-413737",checkdigit: true};cards [16] = {name: "VISADRUK",length: "16, 19",prefixes: "419176-419179",checkdigit: true};cards [17] = {name: "VISADRUK",length: "16, 19",prefixes: "421592-421594",checkdigit: true};cards [18] = {name: "VISADRUK",length: "16, 19",prefixes: "444005-444008",checkdigit: true};cards [19] = {name: "VISADRUK",length: "16, 19",prefixes: "446200-446299",checkdigit: true};cards [20] = {name: "VISADRUK",length: "16, 19",prefixes: "453978-453979",checkdigit: true};cards [21] = {name: "VISADRUK",length: "16, 19",prefixes: "454432-454435",checkdigit: true};cards [22] = {name: "VISADRUK",length: "16, 19",prefixes: "456725-456745",checkdigit: true};cards [23] = {name: "VISADRUK",length: "16, 19",prefixes: "465830-465879",checkdigit: true};cards [24] = {name: "VISADRUK",length: "16, 19",prefixes: "465901-465950",checkdigit: true};cards [25] = {name: "VISADRUK",length: "16, 19",prefixes: "475110-475159",checkdigit: true};cards [26] = {name: "VISADRUK",length: "16, 19",prefixes: "475710-475759",checkdigit: true};cards [27] = {name: "VISADRUK",length: "16, 19",prefixes: "476220-476269",checkdigit: true};cards [28] = {name: "VISADRUK",length: "16, 19",prefixes: "476340-476389",checkdigit: true};cards [29] = {name: "VISADRUK",length: "16, 19",prefixes: "484409-484410",checkdigit: true};cards [30] = {name: "VISADRUK",length: "16, 19",prefixes: "490960-490979",checkdigit: true};cards [31] = {name: "VISADRUK",length: "16, 19",prefixes: "492181-492182",checkdigit: true};cards [32] = {name: "VISAELUK",length: "16, 19",prefixes: "400115-400115",checkdigit: true};cards [33] = {name: "VISAELUK",length: "16, 19",prefixes: "400837-400839",checkdigit: true};cards [34] = {name: "VISAELUK",length: "16, 19",prefixes: "412921-412923",checkdigit: true};cards [35] = {name: "VISAELUK",length: "16, 19",prefixes: "417935-417935",checkdigit: true};cards [36] = {name: "VISAELUK",length: "16, 19",prefixes: "419740-419741",checkdigit: true};cards [37] = {name: "VISAELUK",length: "16, 19",prefixes: "419773-419776",checkdigit: true};cards [38] = {name: "VISAELUK",length: "16, 19",prefixes: "424519-424519",checkdigit: true};cards [39] = {name: "VISAELUK",length: "16, 19",prefixes: "444000-444000",checkdigit: true};cards [40] = {name: "VISAELUK",length: "16, 19",prefixes: "424962-424963",checkdigit: true};cards [41] = {name: "VISAELUK",length: "16, 19",prefixes: "484406-484408",checkdigit: true};cards [42] = {name: "VISAELUK",length: "16, 19",prefixes: "484411-484455",checkdigit: true};cards [43] = {name: "VISAELUK",length: "16, 19",prefixes: "491730-491759",checkdigit: true};cards [44] = {name: "VISAELUK",length: "16, 19",prefixes: "491880-491880",checkdigit: true};cards [45] = {name: "VISAELUK",length: "16, 19",prefixes: "400837-400837",checkdigit: true};cards [46] = {name: "VISAPU",length: "16, 19",prefixes: "448400-448699",checkdigit: true};cards [47] = {name: "VISAPU",length: "16, 19",prefixes: "471500-471599",checkdigit: true};cards [48] = {name: "MAESTROUK",length: "16, 19",prefixes: "490303-490303",checkdigit: true};cards [49] = {name: "MAESTROUK",length: "16, 19",prefixes: "493698-493698",checkdigit: true};cards [50] = {name: "MAESTROUK",length: "16, 19",prefixes: "633311-633311",checkdigit: true};cards [51] = {name: "MAESTROUK",length: "16, 19",prefixes: "675900-675999",checkdigit: true};cards [52] = {name: "MCDR",length: "16, 16",prefixes: "516730-516979",checkdigit: true};cards [53] = {name: "MCDR",length: "16, 16",prefixes: "517000-517049",checkdigit: true};cards [54] = {name: "MCDR",length: "16, 16",prefixes: "535110-535309",checkdigit: true};cards [55] = {name: "MCDR",length: "16, 16",prefixes: "535420-535819",checkdigit: true};cards [56] = {name: "MCDR",length: "16, 16",prefixes: "537210-537609",checkdigit: true};cards [57] = {name: "MCDR",length: "16, 16",prefixes: "557347-557496",checkdigit: true};cards [58] = {name: "MC",length: "16, 16",prefixes: "510000-516729",checkdigit: true};cards [59] = {name: "MC",length: "16, 16",prefixes: "516980-516999",checkdigit: true};cards [60] = {name: "MC",length: "16, 16",prefixes: "517050-535109",checkdigit: true};cards [61] = {name: "MC",length: "16, 16",prefixes: "535310-535419",checkdigit: true};cards [62] = {name: "MC",length: "16, 16",prefixes: "535820-537209",checkdigit: true};cards [63] = {name: "MC",length: "16, 16",prefixes: "537610-557346",checkdigit: true};cards [64] = {name: "MC",length: "16, 16",prefixes: "557497-559999",checkdigit: true};cards [65] = {name: "SOLO",length: "16, 19",prefixes: "676700-676799",checkdigit: true};cards [66] = {name: "JCB",length: "16, 16",prefixes: "180000-180099",checkdigit: true};cards [67] = {name: "JCB",length: "16, 16",prefixes: "213100-213199",checkdigit: true};cards [68] = {name: "DC",length: "15, 15",prefixes: "380000-389999",checkdigit: true};cards [69] = {name: "DC",length: "14, 14",prefixes: "360000-369999",checkdigit: true};cards [70] = {name: "",length: "15, 15",prefixes: "340000-349999",checkdigit: true};cards [71] = {name: "JCB",length: "16, 16",prefixes: "350000-359999",checkdigit: true};cards [72] = {name: "MAESTRO",length: "12, 19",prefixes: "500000-509999",checkdigit: true};cards [73] = {name: "MC",length: "16, 16",prefixes: "550400-550499",checkdigit: true};cards [74] = {name: "MAESTRO",length: "12, 19",prefixes: "560000-589999",checkdigit: true};cards [75] = {name: "MAESTRO",length: "12, 19",prefixes: "600000-699999",checkdigit: true};cards [76] = {name: "VISA",length: "16, 19",prefixes: "400000-499999",checkdigit: true};cards [77] = {name: "BNI",length: "16, 16",prefixes: "194600-194699",checkdigit: true};cards [78] = {name: "VISA",length: "16, 19",prefixes: "431178-431180",checkdigit: true};</script>
+<script src="/ScriptResource.axd?d=vtDlB4Im8FvWjMJPIo4wgc7RaNkTpxQQz33mVx_NQQvX-alyMsTBWh5iQUmy3C5d-DXPUhTef2WtqJ3qx8vNQAONm2lEu-IkPcaVUDVo2Eb5F8h6W_HBzETQ2S1yST0EC9FDhQ2&amp;t=635651440180000000" type="text/javascript"></script>
+<script src="WebService/B2cService.asmx/js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBAKzkYX3CgLFxqaOCAKJltWICQLN1fjZAlQWsCNjfFDe82/nmfce7vh9CGA7" />
+    
+    <!--Fading-->
+    <input type="hidden" id="hdLang" name="hdLang" value="zh-TW" />
+    <div id="dvProgressBar" class="DisableWindow">
+    </div>
+    <div id="dvDisableInsurance" class="DisableWindow">
+    </div>
+
+	
+
+    <!--progress bar-->
+    <div id="dvFormHolder" class="IndicatorPax">
+    </div>
+    <!--Start Error Box-->
+    <div id="dvMessageBox" class="ErrorBox">
+        <div class="xouter">
+            <div class="xcontainer">
+                <div class="xinner LoadingBoxError">
+                    
+                    <div class="errorcontent">
+                        <div class="ErrorBoxHeader">
+                            <img src="App_Themes/Default/Images/mainlogo.png" alt="peach" />
+                        </div>
+                        <div class="ErrorContent">
+                            <div id="dvMessageIcon" class="ErrorBoxMid">
+                                <img src="App_Themes/Default/Images/alert.png" alt="" />
+                            </div>
+                            <div id="dvErrorMessage" class="ErrorBoxBot RedFontB">
+                                Error Text
+                            </div>
+                        </div>
+                        <div class="clear-all">
+                        </div>
+                        <div class="AjaxButton" id="dvConfirmOK" style="display: none">
+                            <a href="#" onclick="return false;" class="defaultbutton"><span>
+                                下一步
+                            </span></a>
+                            <div class="clear-all">
+                            </div>
+                        </div>
+                        <div class="AjaxButton">
+                            <a href="#" onclick="return false;" class="defaultbutton"><span id="dvMessageButtonText"
+                                onclick="CloseMessageBox();">
+                                OK
+                            </span></a>
+                            <div class="clear-all">
+                            </div>
+                        </div>
+                        <div class="clear-all">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Error Box-->
+    <div id="dvLoad" class="ProgressBox">
+        <div class="xouter">
+            <div class="xcontainer">
+                <div class="xinner LoadingBox">
+                    <div class="loadingtext">
+                        請稍待片刻‧‧‧
+                    </div>
+                    <div class="clear-all">
+                    </div>
+                    <div class="LoadingBoxMid">
+                        <img src="App_Themes/Default/Images/loading.gif" alt="" />
+                    </div>
+                    <div class="LoadingBoxFoot">
+                    </div>
+                    <div class="clear-all">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-all">
+    </div>
+    <div id="dvLoadBar" class="ProgressBarBox">
+        <div class="xouter">
+            <div class="xcontainer">
+                <div class="xinner LoadingBox">
+                    <div id="dvPaymentLoadingMessage" class="loadingtext">
+                        請稍待片刻‧‧‧
+                    </div>
+                    <div id="dvInsuranceLoadingMessage" class="loadingtext" style="display: none;">
+                        Now processing your insurance request...
+                    </div>
+                    <div class="clear-all">
+                    </div>
+                    <div class="LoadingBoxMid">
+                        <img src="App_Themes/Default/Images/loading.gif" alt="" />
+                    </div>
+                    <div class="LoadingBoxFoot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div id="InsurancePopup" style="display:none;">
+					<div class="xouter">
+						<div class="xcontainer">
+							<div class="xinner DisplayInsurance">
+								<div class="InsurancePopup">
+									<div class="ATI_Logo">
+										<img src="App_Themes/Default/Images/mainlogo.png" />
+									</div>
+									<div class="ATI_Title">
+										--
+									</div>
+									
+									<div class="clear-all"></div>
+									
+									<div class="ATI_Image">
+										<img src="https://www.flypeach.com/Portals/0/images/ibe/B2C/popup/TW/b2c_ancillary.jpg" />
+									</div>
+						
+									<div class="ATI_Content">
+										<div class="ATI_Detail">
+				                            -
+										</div>
+										
+										<div class="ATI_Detail">
+				                            -
+											<div class="clear-all"></div>
+				                            -
+										</div>
+										
+									</div>
+						
+									<div class="clear-all"></div>
+						
+									<div class="ATI_Button">
+										<a class="defaultbutton" onclick="ClosePopupInsurance();">
+											<span>
+												OK
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+	
+    <div class="Wrapper">
+        <div class="Header">
+            <div class="mainlogo">
+                <a href="javascript:LoadMainPage()">
+                    <img src="App_Themes/Default/Images/mainlogo.png" alt="Peach" title="Peach" />
+                </a>
+            </div>
+            <div id="dvHeaderMenu" class="HeaderMenu">
+                <div class="topmenuleft">
+                </div>
+                <div class="topmenucontent">
+                    <!--Menu Section-->
+                    <div id="dvMenu" class="menu">
+
+<ul id="nav">
+
+	
+					<li class="first">
+						<a href="javascript:LoadDialog();" title="登入">
+							登入
+						</a>
+					</li>
+				
+	
+</ul>
+</div>
+                </div>
+                <div class="topmenuright">
+                </div>
+            </div>
+        </div>
+        <div class="clear-all">
+        </div>
+        <div class="content-default">
+            <!--Start Main Contend-->
+            <div id="dvContainer">
+<div class="stepbar">
+	<ul>
+		<li class="step1">
+			<div>
+                搜尋結果
+            </div>
+			<div class="flightstep"></div>
+		</li>
+		
+		<li class="step2">
+			<div>
+                旅客資料
+            </div>
+			<div class="personalstep"></div>
+		</li>
+		
+		<li class="step3">
+			<div>
+                指定座位
+            </div>
+			<div class="seatstep"></div>
+		</li>
+		
+		<li class="step4">
+			<div>
+                付款
+            </div>
+			<div class="purchasestep"></div>
+		</li>
+	</ul>
+
+</div>
+
+<div class="clear-all"></div>
+	<div class="col-two">
+        <iframe frameborder="0" scrolling="no" src="https://www.flypeach.com/TW/b2ctopiframe.aspx"></iframe>
+	</div>
+
+</div>
+            <!--End Main Contend-->
+            <!--Start FFP Login Menu-->
+            <div id="dvClientInfo" style="display: none;">
+            </div>
+            <!--End FFP Login Menu-->
+            <!-- Start Booking Summary -->
+            <div id="dvYourSelection" class="YourSelection" style="display: none;">
+                <div class="rigntnavleft">
+                </div>
+                <div class="rightnavcontent">
+                    <img src="App_Themes/default/Images/reservation.png" class="reservation" alt="" />
+                    行程內容
+                </div>
+                <div class="rightnavright">
+                </div>
+                <div class="clear-all">
+                </div>
+                <div class="gradient">
+                    <!--Display fare summary for left menu-->
+                    <div id="dvFareSummary" style="display: none;">
+                    </div>
+                    <div id="dvAvaiQuote" style="display: none;">
+                        <div id="dvFareLine_Outward">
+                        </div>
+                        <div id="dvFareLine_Return">
+                        </div>
+                    </div>
+                    <div class="clear-all">
+                    </div>
+                </div>
+                <div class="bottombox">
+                    <div class="homerightnavbottomleft">
+                    </div>
+                    <div class="homerightnavbottom">
+                    </div>
+                    <div class="homerightnavbottomright">
+                    </div>
+                </div>
+                <div class="clear-all">
+                </div>
+                <!--  Start Total All Fare -->
+                <div class="TotalAllFare">
+                    <div class="topbox">
+                        <div class="homerightnavtopleft">
+                        </div>
+                        <div class="homerightnavtop">
+                        </div>
+                        <div class="homerightnavtopright">
+                        </div>
+                    </div>
+                    <div class="gradient">
+                        <div class="airfare">
+                            <div class="airfareleftbox">
+                            </div>
+                            <div class="airfaremiddle">
+                            </div>
+                            <div class="airfarerightbox">
+                            </div>
+                            <div class="airfarecontent">
+                                <div class="totalfare fontB">
+                                    <div class="totalflight">
+                                        合計
+                                    </div>
+                                    <div id="dvTotalFareSummary" class="charges_price_total">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear-all">
+                            </div>
+                            <div class="airfareleftbottombox">
+                            </div>
+                            <div class="airfaremiddlebottom">
+                            </div>
+                            <div class="airfarerightbottombox">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearboth">
+                    </div>
+                    <div class="bottombox">
+                        <div class="homerightnavbottomleft">
+                        </div>
+                        <div class="homerightnavbottom">
+                        </div>
+                        <div class="homerightnavbottomright">
+                        </div>
+                    </div>
+                </div>
+                <!--  End Total All Fare -->
+            </div>
+            <!-- End Booking Summary -->
+            <!--Start Avai Section (Find at SearchAvailability.ascx)-->
+            <div id="dvAvailabilitySearch" class="SearchBox">
+                
+<iframe  style="height:0px; z-index:666;position:absolute; display: none;"  id='fdCal1'  src='' class='frmcls'></iframe>
+<iframe  style="height:0px; z-index:555;position:absolute; display: none;"  id='fdCal2'  src='' class='frmcls'></iframe>
+<div class="FlightSelectionBox">
+	<div class="FlightSelectiontopleftCorner"></div>
+	<div class="FlightSelectiontopmiddle"></div>
+	<div class="FlightSelectiontoprightCorner"></div>
+	<div class="clear-all"></div>
+	
+	<div id="flightselectiongradient">
+		<div class="whitebox">
+			<div class="whiteboxtopleft"></div>
+			<div class="whiteboxtopcontent"></div>
+			<div class="whiteboxtopright"></div>
+			<div class="clear-all"></div>
+			
+			<div class="innerwhitebox">
+				<ul>
+			        <li class="type">
+						<input id="optReturn" name="optSearch" type="radio" checked="checked" value="" onclick="ShowHideCalendar();"/> 
+						<label for="optReturn">
+							來回
+						</label> 
+			        </li>
+					
+			        <li class="type">
+						<input id="optOneWay" name="optSearch" type="radio" value="" onclick="ShowHideCalendar();"/> 
+			            <label for="optOneWay">
+							單程
+						</label>
+			        </li>
+			    </ul>
+				
+				<ul>
+			        <li class="FromTo destinationpoint">
+						<label for="AvailabilitySearch1_optOrigin">
+							出發地
+						</label>
+						<select name="AvailabilitySearch1$optOrigin" id="AvailabilitySearch1_optOrigin" onchange="javascript:getDestination();">
+	<option value="" class="watermarkOn"></option>
+	<option value="PUS|KRW">Busan</option>
+	<option value="FUK|JPY">Fukuoka</option>
+	<option value="HKG|HKD">Hong Kong</option>
+	<option value="KOJ|JPY">Kagoshima</option>
+	<option value="KHH|TWD">Kaohsiung</option>
+	<option value="MYJ|JPY">Matsuyama</option>
+	<option value="KMI|JPY">Miyazaki</option>
+	<option value="NGS|JPY">Nagasaki</option>
+	<option value="ISG|JPY">New Ishigaki</option>
+	<option value="OKA|JPY">Okinawa</option>
+	<option value="KIX|JPY">Osaka - Kansai</option>
+	<option value="CTS|JPY">Sapporo - Chitose</option>
+	<option value="SDJ|JPY">Sendai</option>
+	<option value="ICN|KRW">Seoul - Incheon</option>
+	<option selected="selected" value="TPE|TWD">Taipei - Taoyuan</option>
+	<option value="NRT|JPY">Tokyo - Narita</option>
+	<option value="HND|JPY">Tokyo Haneda</option>
+</select>
+			        </li>
+			
+			        <li class="FromTo destinationpoint">
+						<label for="AvailabilitySearch1_optDestination">
+							目的地
+						</label>
+						<select name="AvailabilitySearch1$optDestination" id="AvailabilitySearch1_optDestination">
+	<option value="" class="watermarkOn"></option>
+	<option value="TPE|Taipei - Taoyuan|OKA|Okinawa|0|TWD">Okinawa</option>
+	<option value="TPE|Taipei - Taoyuan|KIX|Osaka - Kansai|0|TWD">Osaka - Kansai</option>
+	<option value="TPE|Taipei - Taoyuan|HND|Tokyo Haneda|0|TWD">Tokyo Haneda</option>
+</select>
+			        </li>
+					
+					<li class="FromTo displaynone">
+						<label for="AvailabilitySearch1_optCurrency">	
+							使用貨幣
+						</label>
+						<select name="AvailabilitySearch1$optCurrency" id="AvailabilitySearch1_optCurrency">
+	<option value="HKD">Hong Kong Dollar</option>
+	<option value="JPY">Japanese Yen</option>
+	<option value="KRW">Korean Won</option>
+	<option selected="selected" value="TWD">Taiwan Dollar</option>
+</select> 
+			        </li>
+			
+					<li class="FromTo displaynone">
+						<label for="optBoardingClass">
+							艙等
+						</label>
+						<select id="optBoardingClass" class="class">
+							<option value="">
+			                    經濟艙
+			                </option>
+						</select>
+			        </li>
+			
+					<li class="clear-all"></li>
+			        
+			        <li class="FromTo">
+						<label for="ddlDate_1">
+							去程日期
+						</label>
+			        </li>
+			
+			        <li id="CalenderBase"  class="TabDate">
+			            <select name="ddlDate_1" id="ddlDate_1" class="Day" onchange="javascript:hiddenCalendar('1', this)">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option selected="selected" value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select>&nbsp;<select name="ddlMY_1" id="ddlMY_1" class="MonthYear" onchange="javascript:hiddenCalendar('1', this)">
+	<option value="201512">十二月 2015</option>
+	<option value="201601">一月 2016</option>
+	<option value="201602">二月 2016</option>
+	<option value="201603">三月 2016</option>
+	<option value="201604">四月 2016</option>
+	<option value="201605">五月 2016</option>
+	<option value="201606">六月 2016</option>
+	<option value="201607">七月 2016</option>
+	<option value="201608">八月 2016</option>
+	<option value="201609">九月 2016</option>
+	<option value="201610">十月 2016</option>
+	<option value="201611">十一月 2016</option>
+	<option value="201612">十二月 2016</option>
+	<option value="201701">一月 2017</option>
+	<option value="201702">二月 2017</option>
+
+</select>&nbsp;<!--IMG_Ctrl-->                  
+				   <input type="button" title=""  class="calendar_icon" id="calendar"  style="display:inline" onclick="TriggerCalendar1();" />
+				   <div id="divCa1"></div>
+			        </li> 
+			
+			        <li id='Cal1' class="CAL"></li>
+			        
+			        <li id="lblReturnDate" class="FromTo">
+						<label for="ddlDate_2">
+							回程日期
+						</label>
+			        </li>
+			
+			        <li id="calRen2" class="TabDate">
+			            <select name="ddlDate_2" id="ddlDate_2" class="Day" onchange="javascript:hiddenCalendar('2', this)">
+	<option value="01">01</option>
+	<option value="02">02</option>
+	<option value="03">03</option>
+	<option value="04">04</option>
+	<option value="05">05</option>
+	<option value="06">06</option>
+	<option value="07">07</option>
+	<option value="08">08</option>
+	<option value="09">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option selected="selected" value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select>&nbsp;<select name="ddlMY_2" id="ddlMY_2" class="MonthYear" onchange="javascript:hiddenCalendar('2', this)">
+	<option value="201512">十二月 2015</option>
+	<option value="201601">一月 2016</option>
+	<option value="201602">二月 2016</option>
+	<option value="201603">三月 2016</option>
+	<option value="201604">四月 2016</option>
+	<option value="201605">五月 2016</option>
+	<option value="201606">六月 2016</option>
+	<option value="201607">七月 2016</option>
+	<option value="201608">八月 2016</option>
+	<option value="201609">九月 2016</option>
+	<option value="201610">十月 2016</option>
+	<option value="201611">十一月 2016</option>
+	<option value="201612">十二月 2016</option>
+	<option value="201701">一月 2017</option>
+	<option value="201702">二月 2017</option>
+
+</select>&nbsp;<!--IMG_Ctrl-->                  
+					<input type="button" title=""  class="calendar_icon" id="calendar2"  style="display:inline" onclick="TriggerCalendar2();" /> 
+				       <div id="divCa2"></div>
+			        </li>
+			        <li id='Cal2'   style='POSITION: absolute;Z-INDEX: 1001;' class="CAL"></li>
+					
+					<li class="clear-all"></li>
+				</ul>
+				<div class="clear-all"></div>
+				
+				<ul class="PassengerSelection">
+					<li class="FromTo">
+						<label for="optAdult">
+                            乘客
+                        </label>
+					</li>
+				
+			        <li class="passenger">
+						<select id="optAdult" class="pax">
+							<option value="1" selected="selected">
+			                    成人 1
+			                </option>
+							<option value="2">
+			                    成人 2
+			                </option>
+							<option value="3">
+			                    成人 3
+			                </option>
+							<option value="4">
+			                    成人 4
+			                </option>
+							<option value="5">
+			                    成人 5
+			                </option>
+							<option value="6">
+			                    成人 6
+			                </option>
+							<option value="7">
+			                    成人 7
+			                </option>
+							<option value="8">
+			                    成人 8
+			                </option>
+							<option value="9">
+			                    成人 9
+			                </option>
+						</select>
+						
+			        </li>
+					<li class="passenger">
+						<select id="optChild" class="pax">
+							<option value="0">
+			                    兒童
+			                </option>
+							<option value="1">
+			                    兒童 1 
+			                </option>
+							<option value="2">
+			                    兒童 2 
+			                </option>
+							<option value="3">
+			                    兒童 3 
+			                </option>
+							<option value="4">
+			                    兒童 4 
+			                </option>
+							<option value="5">
+			                    兒童 5 
+			                </option>
+							<option value="6">
+			                    兒童 6 
+			                </option>
+							<option value="7">
+			                    兒童 7 
+			                </option>
+							<option value="8">
+			                    兒童 8 
+			                </option>
+						</select>
+						
+					</li>
+			        <li class="passenger">
+			            <select id="optInfant" class="pax">
+			                <option value="0">
+			                    嬰幼兒
+			                </option>
+			                <option value="1">
+			                    嬰幼兒 1
+			                </option>
+			                <option value="2">
+			                    嬰幼兒 2
+			                </option>
+			                <option value="3">
+			                    嬰幼兒 3
+			                </option>
+			                <option value="4">
+			                    嬰幼兒 4
+			                </option>
+			                <option value="5">
+			                    嬰幼兒 5
+			                </option>
+			                <option value="6">
+			                    嬰幼兒 6
+			                </option>
+			                <option value="7">
+			                    嬰幼兒 7
+			                </option>
+			                <option value="8">
+			                    嬰幼兒 8
+			                </option>
+			                <option value="9">
+			                    嬰幼兒 9
+			                </option>
+			            </select>
+						
+			        </li>
+			        
+			        <li class="clear-all"></li>
+			        
+			        <li id="dvPromoCode" style="display:none;">
+                    促銷代碼
+				    <input id="txtPromoCode" type="text" />
+                </li>
+			        
+			    </ul>
+			    
+			    
+                
+                <div class="SearchFlight">
+					<a href="javascript:void(0);" onclick="javascript:SearchAvailability('', '');" title="搜尋" class="defaultbutton">
+						<span id="spnSearchCap">
+							搜尋
+						</span>
+					</a>
+				</div>
+				
+		    	<div class="clear-all"></div>
+				
+                <div id="AvailabilitySearch1_dvlowFareFinderOption">
+                	<div class="SearchFlightBy">
+					    <div class="SearchFlightByOption">
+						    <input type="radio" id="rdSearchTypeDate" name="rdSearchType" checked="checked"/> 
+						    <label for="rdSearchTypeDate">
+                              搜尋所選日期
+                            </label>
+					    </div>
+					
+					     <div class="SearchFlightByOption">
+		                    <input type="radio" id="rdSearchTypeCal" name="rdSearchType"/> 
+
+						    <div class="lowfaretooltip FloatLeft">
+						
+							    <div class="fg-tooltip ui-widget ui-widget-tooltip ui-corner-all" style="display: none;">
+								    <div>
+                                        最低票價一覽可讓您一次查詢一整個月的最低票價
+                                    </div>
+	
+								    <div class="fg-tooltip-pointer-down ui-widget-tooltip">
+									    <div class="fg-tooltip-pointer-down-inner"></div>
+								    </div>
+							    </div>
+						
+							    <p class="LowFareCalendarText">
+								    <a href="#" class="tooltip">
+									    <label for="rdSearchTypeCal">
+                                            最低票價一覽
+                                        </label>
+								    </a>
+							    </p>
+						
+						    </div>
+					    </div> 
+                    </div>
+                </div>				
+				<div class="clear-all"></div>
+
+				<div class="flightselectioncontent">
+                    成人(12歲以上) 兒童(2-11歲) 嬰幼兒(0-23個月)
+				</div>
+				
+				<div class="flightselectioncontent">
+                    <a href="http://www.flypeach.com/tw/airport/specialsupport.aspx" target="_blank">需要特別協助嗎?</a>
+                    <a href="http://www.flypeach.com/tw/airport/specialsupport.aspx#04" target="_blank">關於兒童與嬰幼兒訂票</a>
+                    <a href="http://www.flypeach.com/tw/contactus/faq.aspx#groupbooking" target="_blank">團體預約</a>
+				</div>
+				
+				<div class="clear-all"></div>
+				
+			</div>
+			
+			<div class="BottominnerBox">
+				<div class="whiteboxbottomleft"></div>
+				<div class="whiteboxbottomcontent"></div>
+				<div class="whiteboxbottomright"></div>
+			</div>
+			
+		</div>
+	
+		<div class="clear-all"></div>
+	</div>
+	
+	<div class="clear-all"></div>
+	
+	<div class="BottomBox">
+		<div class="BoxdownleftCorner"></div>
+		<div class="BoxdownmiddleCorner"></div>
+		<div class="BoxdownrightCorner"></div>
+	</div>
+	
+	<div class="clear-all"></div>
+
+</div>
+
+                <div class="clear-all">
+                </div>
+            </div>
+            <!--End Avai Section-->
+            <div class="clear-all">
+                <!--control bottom "WrapperBody"-->
+            </div>
+        </div>
+        <!--End WrapperBody-->
+        <div class="clear-all">
+        </div>
+        <div class="Footer">
+            <div class="peachicon">
+            </div>
+            <div class="clear-all">
+            </div>
+            <div class="footerbg">
+                <div class="copyright">
+                    © 2015 Peach Aviation. All Rights Reserved.
+                    <br />
+                    SRV06
+                </div>
+            </div>
+            <div class="clear-all">
+            </div>
+        </div>
+        <div class="clear-all">
+            <!--control bottom "Wrapper"-->
+        </div>
+    </div>
+    <!--End Wrapper-->
+    <!--START script for SearchAvailability calendar Only-->
+    <script language="javascript" type="text/javascript">
+
+        var ResultType = "ddl";
+        var CalendarToControls = "one2one";
+        var DateFormat = "DDMMYYYY";
+
+        $(function () {
+            $('#calendar').daterangepicker().click(function () {
+                $('.ui-daterangepicker:visible .ui-daterangepicker-dateRange').click();
+            });
+            $('#calendar2').daterangepicker().click(function () {
+                $('.ui-daterangepicker:visible .ui-daterangepicker-dateRange').click();
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="Scripts/JQuery/jquery-ui-1.7.1.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/JQuery/daterangepicker.jQuery.js"></script>
+    <!--END script for SearchAvailability calendar Only-->
+    <!--For Adword script-->
+    <iframe id="ifmAdWord_google" width="0" height="0"></iframe>
+    <iframe id="ifmAdWord_yahoo" width="0" height="0"></iframe>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+    <script type="text/javascript">
+        //**********************************************************
+        //Call function when every DOM is load
+        $(document).ready(FormLoadOperation)
+    </script>
+</body>
+</html>
