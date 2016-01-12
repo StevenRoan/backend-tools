@@ -4,7 +4,11 @@
 #### Aggregate Pipeline
 * $ can be special operator, or get the value of field
   *`$<field name>` the value of that field, or `$sum` as example
-   * e.g. `$group:{"_id": "$title", sum:{$sum:1}}`
+   * e.g. `$group:{"_id": "$title", mylength:{$sum:1}}`
+Complete Example
+```
+db.getCollection('records').aggregate([{$match:{scope:'ok'}},{$unwind: "$mySubDoc"},{$group: {"_id":"$myId",mylength:{$sum:1}}},{$sort:{mylength:-1}}])
+```
 
 
 
