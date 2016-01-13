@@ -11,7 +11,7 @@
 * Run a docker container. NOTE: when running a image, docker will try to use the image in the **local** first
  * `docker run <image name>`
 
-### info
+### Info
 * `docker images` get images list
 
 ### CRUD
