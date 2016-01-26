@@ -17,6 +17,11 @@
  * `docker run <image name>`
   1. Check if the image is in local
   1. Clone from remote if it is not in local
+
+* For Linux
+ * Add user to group `docker`. [ref](http://stackoverflow.com/questions/33562109/docker-command-cant-connect-to-docker-daemon)
+
+
 ### SSH/Attach to a contanier
 * `docker attach <CONTAINER>
 
