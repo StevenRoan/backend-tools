@@ -3,41 +3,51 @@
 
 
 ### Basic Flow
-* OSX Only
- * Create a VM (boot2docekr, docker-machine) (`default machine with IP 192.168.99.100`)
+##### 1. Start Container
+  * OSX Only Steps
+    * Runinng a Docker Daemon, Otherwise, `Is the docker daemon running on this host?`
+      * Create a VM (boot2docker, docker-machine) (`default machine with IP 192.168.99.100`)
+      * Put `eval "$(docker-machine env default)"` in .bash_profile
+        * Use docker quick start terminal in OSX
 
-* Runinng a Docker Daemon, Otherwise, `Is the docker daemon running on this host?`
- * Use docker quick start terminal in OSX
- * **How to start Docker Daemon everytime we startup a teminal**
+  * Linux Only Step
+    * Add user to group `docker`. [ref](http://stackoverflow.com/questions/33562109/docker-command-cant-connect-to-docker-daemon)
 
-* Build image from a Docker file. (Or using an existent image in the docker hub)
- * `docker build -t <image name> .` //Use default docker file in current directory
+##### 2. Build Images
+  * Build image from a Docker file. (Or using an existent image in the docker hub)
+    * `docker build -t <image name> .` //Use default docker file in current directory
 
-* Run a docker container. NOTE: when running a image, docker will try to use the image in the **local** first
- * `docker run <image name>`
-  1. Check if the image is in local
-  1. Clone from remote if it is not in local
-
-* For Linux
- * Add user to group `docker`. [ref](http://stackoverflow.com/questions/33562109/docker-command-cant-connect-to-docker-daemon)
-
-
-### SSH/Attach to a contanier
-* `docker attach <CONTAINER>
+##### 3. Run Container
+  * Run a docker container. NOTE: when running a image, docker will try to use the image in the **local** first
+    * `docker run <image name>`
+      1. Check if the image is in local
+      1. Clone from remote if it is not in local
 
 
-### Info
-* `docker images`: get images list
-* `docker ps`: get  containers list
+##### 4. SSH/Attach to a contanier
+  * `docker attach <CONTAINER>`
 
-### CRUD
-* Delete
-  * `docker rm`: remove docker container, `docker rm -i`: remove docker image
-  * `docker rmi <imageID>`: remove docker container, `docker rm -i`: remove docker image
-* Build our own images by Dockerfile
- * `docker build -t <image name> <path of Dockerfile>`
+### Other Operation Summary
 
-### Remote
+##### In Docker command
+  * Exit
+    * Ctrl+D  = `exit`
+    * Ctrl+P then Ctrl+Q -> 不會導致 container 中止 (more like detach)
+
+##### Info
+  * `docker images`: get images list
+  * `docker ps`: get  containers list
+
+##### CRUD
+  * Delete
+    * `docker rm <container ID>`: remove docker container, `docker rm -i`: remove docker image
+    * `docker rmi <imageID>`: remove docker container, `docker rm -i`: remove docker image
+  * Build our own images by Dockerfile
+    * `docker build -t <image name> <path of Dockerfile>`
+  * Commit image
+    * `docker commit <container_id> <customized_image_name_you_want>`
+
+##### Docker Hub
 * `docker login --username=<name> --email=<email>`
  * WARNING: login credentials saved in /Users/<user>/.docker/config.json
 
@@ -46,6 +56,4 @@
   * TODO:Autocomplete?
 
 ### Questions
-* Why `docker rmi` remove more than one image a time
 * in the container, why the `df -h` get a lot of space
-* How to keep docker container alive after `exit`
