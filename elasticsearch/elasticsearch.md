@@ -37,4 +37,9 @@ index -----By Mapping---> Field
  * `/_cluster/health?level=indices&pretty`
  * `/_cat/shards`
   * `red` is broken status
+* delete
+ * `curl -XDELETE 'http://localhost:9200/<index>'`
+
+### Query DSL
+* [doc](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax)
 
