@@ -19,7 +19,7 @@
 
 ##### 3. Run Container
   * Run a docker container. NOTE: when running a image, docker will try to use the image in the **local** first
-    * `docker run <image name>`
+    * `docker run <image name> <cmd>`, e.g.: `docker run <image> /bin/bash
       1. Check if the image is in local
       1. Clone from remote if it is not in local
 
