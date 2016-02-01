@@ -20,6 +20,9 @@
     * count
     * max... etc
 
+#### Plugins
+* `./bin/kibana plugin --install elastic/sense`
+
 #### Problem
 * Cannot use .raw filed in Kibana.
  * [Confused about how to use .raw fields and not analyze string fields](https://discuss.elastic.co/t/confused-about-how-to-use-raw-fields-and-not-analyze-string-fields/28106)

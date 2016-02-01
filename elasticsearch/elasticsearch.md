@@ -11,12 +11,15 @@
 * In elasticsearch 2.1, es only received request from localhost by default.
 
 ### Teminology
-* index: like mongodb collection
- * filed: an index may contains many fields (like json keys)
+* index: like mongodb **database**, rdb **database**
+* type: like mongodb **collection**, rdb **table** -> has a schema
+* document: like mongodb **document**, rdb **rows**
+* filed: like the "json" key in mongodb, rdb **columns**
+  * an index may contains many fields (like json keys)
   * multivalue fields: a field might contain many values (because of analyzed or .raw ...etc)
    * `.raw`: [link](https://www.elastic.co/guide/en/elasticsearch/guide/current/multi-fields.html)
-* type: (external?
-* Mapping: Mapping is the process of defining how a document, and the fields it contains, are stored and indexed. For instance, use mappings to define.
+
+* Mapping: Like **schema** Mapping is the process of defining how a document, and the fields it contains, are stored and indexed. For instance, use mappings to define.
 
 ### Structure
 ```

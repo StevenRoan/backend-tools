@@ -26,7 +26,8 @@
 
 
 ##### 4. SSH/Attach to a contanier
-  * `docker attach <CONTAINER>`
+  * `docker exec <CONTAINER> <CMD>`
+  * `docker attach <CONTAINER>`: docker attach 對與 detach mode (stdin/stdout 掛上去)
 
 ### Other Operation Summary
 
@@ -37,7 +38,7 @@
 
 ##### Info
   * `docker images`: get images list
-  * `docker ps`: get  containers list
+  * `docker ps -a`: get  containers list (-a includes not running container)
 
 ##### CRUD
   * Delete
