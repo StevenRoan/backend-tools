@@ -33,6 +33,8 @@ index -----By Mapping---> Field
  * `http://localhost:9200/<index name>/_mapping` (.raw field is not shown, why)
 * find all indexs
  * `http://localhost:9200/_cat/indices?v`
+* find all mapping
+ * `http://localhost:9200/<index name>/_mapping`
 * get settings
  * `localhost:9200/_nodes/settings?pretty=true`
 * get cluster status
@@ -42,6 +44,10 @@ index -----By Mapping---> Field
   * `red` is broken status
 * delete
  * `curl -XDELETE 'http://localhost:9200/<index>'`
+
+### Directory Layout
+* Follow original layout and put the conf in right place [directory layout](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-dir-layout.html)
+ * In docker, go `/usr/share/elasticsearch`
 
 ### Query DSL
 * [doc](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax)
