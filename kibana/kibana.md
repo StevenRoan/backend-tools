@@ -22,6 +22,7 @@
 
 #### Plugins
 * `./bin/kibana plugin --install elastic/sense`
+ * 'http://<host:port>/app/sense'
 
 #### Problem
 * Cannot use .raw filed in Kibana.
