@@ -26,7 +26,7 @@
 
 
 ##### 4. SSH/Attach to a contanier
-  * `docker exec <CONTAINER> <CMD>`
+  * `docker exec -it <CONTAINER> <CMD>`
   * `docker attach <CONTAINER>`: docker attach 對與 detach mode (stdin/stdout 掛上去)
 
 ### Other Operation Summary

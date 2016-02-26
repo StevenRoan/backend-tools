@@ -7,3 +7,4 @@
  * [Linux](linux-native/docs/index.md)
   * [Disk Manipulation](linux-native/docs/disk-manipulation/partition.md)
  * [Elasticsearch](elasticsearch/000elasticsearch.md)
+ * [postgres](postgres/docs/000index.md)
