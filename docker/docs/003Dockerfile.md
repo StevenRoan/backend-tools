@@ -15,12 +15,10 @@
  * COPY and ADD [difference](http://stackoverflow.com/questions/24958140/docker-copy-vs-add)
  * copy the file from the **context** to other location, which is the folder in `docker build ... <context>`
  * `EXPOSE`: expose a port from container. When initiating a container,
- * `VOLUME`: enternal mount point
+ * `VOLUME`: external mount point
 
 #### NOTE
 * `apt-get update` before do any `apt-get install`
 
 * Later
  * docker ignore
-
-

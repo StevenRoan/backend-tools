@@ -15,7 +15,7 @@
 ##### Getting Started
     * metrics: similar to the **value** of y-axis
     * bucket: similar to the **set** of data of x-axis
-##### Aggragation (Supported by Elasticsearch)
+##### Aggregation (Supported by Elasticsearch)
     * unique count
     * count
     * max... etc

@@ -1,0 +1,3 @@
+# SELECT
+
+* `SELECT * FROM <tableName> LIMIT 1000`

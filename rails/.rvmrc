@@ -1,0 +1,3 @@
+#!/bin/basv
+echo 'in the rvmrc'
+rvm use 2.2.1@test1
